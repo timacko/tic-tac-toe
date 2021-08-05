@@ -4,34 +4,47 @@ body {
     background-color:bisque
   }
 
-  h1 {
-    color: purple;
+  .top-section {
+	color: purple;
     size: 50px;
     position: relative;
     text-align: center;
     padding: 0px;
     margin: 17px;
-  }
+
+}
 
   .gamelayout {
-        display: grid;
         grid-template-columns: 1fr 1fr 1fr;
         grid-gap: 30px;
         margin: 88px;
         display: flex; 
+        margin-left: auto;
+        margin-right: auto;
+        width: fit-content;
   }
 
-  .row .square {
+  .square {
       border: 3px solid black;
 	padding: 70px;
 	text-align: center;
-    margin: 88px;
+    margin: 15px;
+    border-radius: 25px;
     
 }
     h2 {
     size: 50px;
     text-align: center;
     }
+
 #currentplayer {
     color: darkseagreen;
 }
+
+
+.secretbutton {
+	display: none;
+    background-color: darkseagreen;
+  
+}
+

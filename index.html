@@ -1,36 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css">
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Tim's Tic Tac Toe</title>
+	<link rel="stylesheet" href="style.css" />
+
 </head>
+
 <body>
-    <h1>TIC TAC TOE GAME</h1>
-    <h2>It is currently <span id="currentplayer">Player 1</span>'s turn</h2>
-    
-    <div class="gamelayout">
-        <div class="row">
-            <div class="square" id= "box0"></div>
-            <div class="square" id= "box1"></div>
-            <div class="square" id= "box2" ></div>
-        </div>
-        <div class="row">
-            <div class="square" id= "box3"></div>
-            <div class="square" id= "box4"></div>
-            <div class="square" id= "box5"></div>
-        </div>
-        <div class="row">
-            <div class="square" id= "box6"></div>
-            <div class="square" id= "box7"></div>
-            <div class="square" id= "box8"></div>
-        </div>
-    </div>
-
-    <script src="script.js"></script>
+	<div class="top-section">
+		<h1>Welcome to Tim's Tic Tac Toe</h1>
+		<h2>Current Turn: <span id="currentplayer">Player 1</span></h2>
+		<h2 class="display-results"></h2>
+		<button class="secretbutton">Restart Game?</button>
+	</div>
+	<div class="gamelayout">
+		<div class="row1">
+			<div class="square"></div>
+			<div class="square"></div>
+			<div class="square"></div>
+		</div>
+		<div class="row2">
+			<div class="square"></div>
+			<div class="square"></div>
+			<div class="square"></div>
+		</div>
+		<div class="row3">
+			<div class="square"></div>
+			<div class="square"></div>
+			<div class="square"></div>
+		</div>
+	</div>
+	<script src="script.js"></script>
 </body>
+
 </html>
-
-
