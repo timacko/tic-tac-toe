@@ -35,5 +35,13 @@ Breakdown of the different code / language used for this game.
 	 - Checking for winning combinations
 	 - Adding and removing event listeners to manipulate the CSS
 
+
+ ### Future development
+
+- Further CSS development
+- Function to check for a draw
+- Function to check is squares are already occupied with a symbol
+
+
 ## Enjoy.
 

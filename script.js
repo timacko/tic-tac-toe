@@ -10,7 +10,6 @@ const displayResults = document.querySelector('.display-results');
 // will use to shows who's turn it is at the top of the page
 const whosTurn = document.querySelector('#currentplayer');
 
-
 // VARIABLES //
 
 const player1 = 'Player 1';
@@ -27,10 +26,11 @@ const winningCombinations = [
 	[2, 4, 6],
 ];
 
+
 //FUNCTIONS//
 
 //Function #1
-//Main function to start the game and uses all the other functions within
+//Main function to start the game and uses all the other functions below.
 const beginGame = (event) => {
 	if (event.target.classList.contains('square')) {
 		event.target.innerText = playerInput();
