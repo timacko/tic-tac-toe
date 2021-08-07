@@ -87,11 +87,11 @@ function winningCombos() {
 		let box3 = eachSquare[winningCombinations[i][2]];
 
 		if (box1.innerText === 'X' && box2.innerText === 'X' && box3.innerText === 'X') {
-			displayResults.innerText = 'Player 1 is the WINNER!';
+			displayResults.innerText = 'PLAYER 1 IS THE WINNER!';
 			startAgain();
 			break;
 		} else if (box1.innerText === 'O' && box2.innerText === 'O' && box3.innerText === 'O') {
-			displayResults.innerText = 'Player 2 is the WINNER!';
+			displayResults.innerText = 'PLAYER 2 IS THE WINNER!';
 			startAgain();
 			break;
 		}

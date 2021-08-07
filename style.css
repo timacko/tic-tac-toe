@@ -5,6 +5,7 @@ body {
   }
 
   .top-section {
+    
 	color: purple;
     size: 50px;
     position: relative;
@@ -17,11 +18,13 @@ body {
   .gamelayout {
         grid-template-columns: 1fr 1fr 1fr;
         grid-gap: 30px;
-        margin: 88px;
+        margin: 0px;
         display: flex; 
         margin-left: auto;
         margin-right: auto;
         width: fit-content;
+        line-height: 0px;
+        
   }
 
   .square {
@@ -38,7 +41,7 @@ body {
     }
 
 #currentplayer {
-    color: darkseagreen;
+    color: green;
 }
 
 
@@ -47,4 +50,10 @@ body {
     background-color: darkseagreen;
   
 }
+
+.display-results {
+    color: darkseagreen;
+
+}
+
 
