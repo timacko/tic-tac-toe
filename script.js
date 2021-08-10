@@ -1,5 +1,5 @@
 // Pull all DOM elements from the HTML // 
-// div for all thequares
+// div for all the squares
 const allSquares = document.querySelector('.gamelayout');
 // each square .. will use for putting the x's and 0's in later
 const eachSquare = document.querySelectorAll('.square');
@@ -39,7 +39,6 @@ const beginGame = (event) => {
 	if (event.target.classList.contains('square')) {
 		event.target.innerText = playerInput();
 		const winner = winningCombos();
-		console.log({winner})
 		if (!winner) {
 			playerChange();
 		} else {
@@ -62,7 +61,6 @@ function playerChange() {
 // Function #4
 // function to show the restart-game button and also stops event listener for restart function
 function startAgain() {
-	restartButton.visibility = 'hidden';
 	allSquares.removeEventListener('click', beginGame);
 };
 
