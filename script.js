@@ -35,8 +35,7 @@ const winningCombinations = [
 //Function #1
 //Main function to start the game and uses all the other functions below.
 const beginGame = (event) => {
-	status.innerText = 'Current Turn: ';
-	if (event.target.classList.contains('square')) {
+	if (!event.target.innerText && event.target.classList.contains('square')) {
 		event.target.innerText = playerInput();
 		const winner = winningCombos();
 		if (!winner) {
@@ -71,7 +70,7 @@ function restart() {
 	whosTurn.innerText = player1;
 	restartButton.style.visibility = 'hidden';
 	eachSquare.forEach((square) => {square.innerText = ''});
-	displayResults.innerText = '';
+	status.innerText = 'Current Turn: ';
 	allSquares.addEventListener('click', beginGame);
 };
 
