@@ -6,9 +6,12 @@ const eachSquare = document.querySelectorAll('.square');
 // will use for button to restart the game
 const restartGame = document.querySelector('button');
 // displays end of game message (winner or tie)
-const displayResults = document.querySelector('.display-results');
+const status = document.querySelector('#status');
+const results = document.querySelector('#results');
 // will use to shows who's turn it is at the top of the page
 const whosTurn = document.querySelector('#currentplayer');
+
+const restartButton = document.querySelector('#restart');
 
 // VARIABLES //
 
@@ -32,7 +35,7 @@ const winningCombinations = [
 //Function #1
 //Main function to start the game and uses all the other functions below.
 const beginGame = (event) => {
-	if (event.target.classList.contains('square')) {
+	if (!event.target.innerText && event.target.classList.contains('square')) {
 		event.target.innerText = playerInput();
 		const winner = winningCombos();
 		if (!winner) {
@@ -45,13 +48,7 @@ const beginGame = (event) => {
 
 // Function #2
 // function to input 'X' or 'O' depending on who's turn it is
-function playerInput() {
-	if (currentTurn === player1) {
-		return 'X';
-	} else {
-		return 'O';
-	}
-};
+const playerInput = () => currentTurn === player1 ? 'X' : 'O';
 
 // Function #3
 // function to switch players turn and update display
@@ -63,7 +60,6 @@ function playerChange() {
 // Function #4
 // function to show the restart-game button and also stops event listener for restart function
 function startAgain() {
-	restartGame.classList.remove('secretbutton');
 	allSquares.removeEventListener('click', beginGame);
 };
 
@@ -72,30 +68,26 @@ function startAgain() {
 function restart() {
 	currentTurn = player1;
 	whosTurn.innerText = player1;
+	restartButton.style.visibility = 'hidden';
 	eachSquare.forEach((square) => {square.innerText = ''});
-	restartGame.classList.add('secretbutton');
-	displayResults.innerText = '';
+	status.innerText = 'Current Turn: ';
 	allSquares.addEventListener('click', beginGame);
 };
 
 // Function #6
 // function to run through winning combinations and see if there is a winning match
-function winningCombos() {
-	for (let i = 0; i < winningCombinations.length; i++) {
-		let box1 = eachSquare[winningCombinations[i][0]];
-		let box2 = eachSquare[winningCombinations[i][1]];
-		let box3 = eachSquare[winningCombinations[i][2]];
-
-		if (box1.innerText === 'X' && box2.innerText === 'X' && box3.innerText === 'X') {
-			displayResults.innerText = 'PLAYER 1 IS THE WINNER!';
+const winningCombos = () => {
+	let winner = false;
+	winningCombinations.forEach((combo) => {
+		const comboSet = combo.map((i) => eachSquare[i].innerText).join('');
+		if (['XXX', 'OOO'].includes(comboSet)) {
+			status.innerText = 'Winner: ';
+			restartButton.style.visibility = 'visible';
 			startAgain();
-			break;
-		} else if (box1.innerText === 'O' && box2.innerText === 'O' && box3.innerText === 'O') {
-			displayResults.innerText = 'PLAYER 2 IS THE WINNER!';
-			startAgain();
-			break;
+			winner = true;
 		}
-	}
+	});
+	return winner;
 };
 
 // Event listeners for beginning and restarting game
